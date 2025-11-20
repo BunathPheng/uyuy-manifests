@@ -1,0 +1,16 @@
+---
+# Source: helm for kubernetes/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: uyuy          # Service name
+  labels:
+    app: uyuy
+spec:
+  type: ClusterIP   # Service type (ClusterIP, NodePort, LoadBalancer)
+  selector:
+    app: uyuy         # Matches Deployment labels
+  ports:
+    - protocol: TCP
+      port: 8080         # Service port
+      targetPort: 8080  # Target container port
